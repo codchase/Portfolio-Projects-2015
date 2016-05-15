@@ -1,0 +1,30 @@
+/* 
+    Document   : style
+    Created on : Jan 29, 2015, 9:41:13 AM
+    Author     : Louie Zhu
+    Description: Define styles for the application.
+*/
+root { 
+    display: block;
+}
+
+body {
+    background-color: #FFFFCC;
+    text-align: -moz-center; /* for Firefox */
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+table {
+    width: 500px;
+    background-color: #3366CC;
+    color: white;
+    border: solid #3366CC 3px;
+}
+
+#timer, #score {
+    color: chartreuse;
+    font-size: 24pt;
+    margin-top: 5px;
+}

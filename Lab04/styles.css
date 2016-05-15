@@ -1,0 +1,85 @@
+/*
+    Document   : app_style.css
+    Author     : Cody Chase
+    Description: External style sheet for the application.
+*/
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body{
+    text-align: center;
+    background-color: white;
+    margin-top: 30px;
+}
+
+/*reset padding for p and hx tags*/
+p {
+    padding: 0 0 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    padding: 0 0 0.4em;
+}
+
+
+/* styles for grid */
+#moviegrid{
+    margin: 10px auto 10px auto;
+    width: 960px; 
+    border: 1px solid #eee;
+    background-color: #ffebeb; 
+}
+
+.row:before, 
+.row:after {
+    content:"";
+    display: table ;
+    clear:both;
+}
+
+.col {
+    float: left; 
+    min-height: 1px; 
+    padding: 16px; 
+    background-color: #ffebeb;
+    border: 1px dotted #ffebeb;
+    text-align: center;
+}
+
+.col:hover {
+    border: 1px solid #ff6600;
+}
+
+.col > p {
+    background-color: #fff; 
+    padding: 0;
+    margin: 0;
+    text-align: left; 
+    color: #333;
+    width: 126px;
+    height: 260px;
+}
+
+.col > p img {
+    width: 126px;
+    height: 178px;
+    border: none;
+}
+
+.col > p a {
+    text-decoration: none;
+}
+
+.col >p span {
+    margin-top: 2px;
+    display: inline-block;
+    padding-left: 3px;
+    font-size: 0.7em;
+    font-family: cursive;
+    color: #555;
+}

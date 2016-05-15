@@ -1,0 +1,108 @@
+<!---
+* Author:Cody Chase
+* Date: Feb 11, 2016
+* File: index.html
+* Description: site page that shows the movies available with the ratings that they are classified by.
+* 
+--->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Movie catalog</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles.css" type="text/css" rel="stylesheet">        
+        <script src="loadJSONDoc.js"></script>
+        <script>
+            /***********************************************************************
+             * Initial set up
+             *
+             ************************************************************************/
+            //add your code here 
+            //this connects the code to json and creates the movie array and object that will be used later in the page.
+            var moviesObj = loadJSON("movies.json");
+
+            var movies = moviesObj.movies;
+
+            var movs = movies.movie;
+
+
+
+
+
+            /************************************************************************
+             * This function takes a movie rating as the parameter. It accesses all
+             * movies in the moviesArr. It then generates another array that stores 
+             * only the movies whose ratings match the parameter of the function. 
+             * At last, the function calles the display_movies function to display
+             * all filtered movies in a grid.
+             ************************************************************************/
+            function filter_movies(rating) {
+                //add your code here to complete the function
+                var moviesArr = new Array();
+                for (var i = 0; i < movs.length; i++) {
+                    if (rating === movs[i].rating) {
+                        moviesArr.push(movs[i]);
+                    }
+                }
+                display_movies(moviesArr);
+
+            }
+
+            /************************************************************************** 
+             * Use window object and the onload event handler to display PG-13 movies
+             * when the page loads initially
+             ************************************************************************/
+            //add your code here
+
+            window.onload = function () {
+                filter_movies("PG-13");
+            };
+            /*************************************************************************** 
+             * This function takes an array of movies as the parameter. Each element in the
+             * array is an JSON object that contains deails of the movie. The function then
+             * displays the details of all movies in the array with a grid.
+             ************************************************************************/
+            function display_movies(movies) {
+                var moviegrid = "";
+                for (var i = 0; i < movies.length; i++) {
+                    //retrieve movie details and store them in variables to be displayed
+                    title = movies[i].title;
+                    rating = movies[i].rating;
+                    release_date = movies[i]["release date"];
+                    poster = movies[i].poster;
+
+                    //start a new row in the grid
+                    if (i % 6 === 0) {
+                        moviegrid += "<div class='row'>";
+                    }
+                    //display a movie inside a div block
+                    moviegrid += "<div class='col'><p><img src='" + poster + "'><span>" + title + "<br>Rated " +
+                            rating + "<br>" + release_date + "</span></p></div>";
+
+                    //close the row in the grid
+                    if (i % 6 === 5) {
+                        moviegrid += "</div>";
+                    }
+                }
+                //display movies in a div block with the id "moviegrid".
+                document.getElementById('moviegrid').innerHTML = moviegrid;
+            }
+        </script>
+    </head>
+    <body>
+        <h2>MOVIE CATALOG</h2>
+        <div>
+            <strong>Choose a genre</strong>:
+            <!---
+            filters the movies based on the rating but these lines include the button necessary to click on to begin the filtering process.
+            --->
+            <input name="Genre" type="radio" value="Computer" onclick="filter_movies('G')"> G
+            <input name="Genre" type="radio" value="Fantasy" onclick="filter_movies('PG')"> PG
+            <input name="Genre" type="radio" value="Romance" checked="checked" onclick="filter_movies('PG-13')"> PG-13
+            <input name="Genre" type="radio" value="Science Fiction" onclick="filter_movies('R')"> R
+            <input name="Genre" type="radio" value="Science Fiction" onclick="filter_movies('NR')"> NR
+        </div>
+        <div id="moviegrid"></div>
+    </body>
+</html>
