@@ -1,0 +1,192 @@
+/* 
+    Document   : snowboardstyle.css
+    Created on : November 10, 2015
+    Author     : John Michael Porten, Cody Chase and Casey Anderson 
+    Description: styles for the Online Snowboard Store web site
+*/
+body {
+    text-align: center; 
+    background-color: #d7c797; 
+}
+
+div#wrapper {
+    text-align:left; 
+    width:980px; 
+    margin:0 auto; 
+    margin-top: 40px;
+    border: 1px solid gray;
+}
+#navbar {
+    background-color: #ead61c;
+    padding: 5px 10px;
+    clear: right;
+}
+
+#navbar a {
+    color: black;
+    text-decoration: none;
+}
+
+#navbar a:hover,
+#navbar a:active,
+#navbar a:focus
+{
+    color: white;
+}
+#footer {
+    height: 40px;
+    font-size: 80%;
+    color: #000000;
+    text-align: center;
+    padding-top: 20px;
+    background-color: #EEE;
+}
+
+#banner {
+    background-color: #000000; 
+    padding: 5px;
+    width: 100%;
+}
+
+#banner img {
+    width: 200px;
+    border: none;
+}
+
+#maintitle {
+    color: white; 
+    font-size: 28pt;
+    font-weight: bold;
+}
+
+#subtitle {
+    color: #ead61c;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+
+/* styles of the shopping cart */
+#shoppingcart {
+    width: 90px;
+    height: 70px;
+    text-align: center;
+    background-color: #ead61c;
+    padding-top: 10px;
+}
+
+#shoppingcart a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#shoppingcart img {
+    width: 50px;
+    border: none;
+}
+
+#shoppingcart span {
+    display: block;
+}
+
+/* styles for the main content body */
+#mainbody {
+    padding: 10px;
+    background-color: white;
+}
+
+#mainbody a {
+    text-decoration: none;
+    color: #393ECE;
+}
+
+#mainbody a:hover,
+#mainbody a:active,
+#mainbody a:focus
+{
+    text-decoration: underline;
+    color: #FF9A35;
+}
+
+//book details
+table.snowboarddetails {
+    width: 100%;
+    border-collapse: collapse;
+    font: 12px/18px Arial, Sans-serif;
+    margin: 5px 0;
+}
+
+table.snowboarddetails td {
+    vertical-align: top;
+}
+
+table.snowboarddetails h4, table.snowboarddetails p {
+    margin: 0px 0px 5px 10px;
+}
+
+table.snowboarddetails td.col1 {
+    width: 180px;
+}
+
+table.snowboarddetails td.col1 img {
+    width: 160px;
+}
+
+table.snowboarddetails th.col2 {
+    width: 120px;
+}
+
+table.snowboarddetails th.col3 {
+    width: 500px;
+}
+table.snowboarddetails td.col4 {
+    padding-left: 25px;
+    vertical-align: top;
+}
+
+table.snowboarddetails td.col4 img{
+    border: none;
+    width: 100px;
+}
+
+/*styles for action buttons */
+.boardstore-button input{
+    width: 75px;
+}
+
+.boardstore-button.delete-confirmed {
+    display: none;
+}
+
+.boardstore-button.delete-initial span,
+.boardstore-button.delete-confirmed span {
+    color: red;
+    font: 12px/18px Arial, Sans-serif;
+    display: inline-block;
+    margin-left: 40px;
+}
+
+
+/*styles for login and registration forms*/
+div.login-container {
+    vertical-align: top;
+}
+
+div.login-container div.login {
+    vertical-align: top;
+    width: 400px;
+    margin-right: 50px;
+    
+}
+div.login-container div.registration {
+    vertical-align: top;
+    border-left: 1px solid black;
+    padding-left: 100px;
+}
+
+div.login-container div {
+    display: inline-block;
+    margin-bottom: 50px;
+}
+
